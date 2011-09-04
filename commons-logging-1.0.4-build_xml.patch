@@ -1,0 +1,51 @@
+--- build.xml.sav	2006-03-30 17:43:01.000000000 +0200
++++ build.xml	2006-03-30 17:45:04.000000000 +0200
+@@ -48,7 +48,8 @@
+   <property name="junit.jar"               value="${junit.home}/junit.jar"/>
+   <property name="log4j.jar"               value="${jakarta.home}/jakarta-log4j/dist/lib/log4j.jar"/>
+   <property name="logkit.jar"              value="${jakarta.home}/jakarta-avalon-logkit/build/log/logkit"/>
+-  <property name="avalon-framework.jar"    value="../../Avalon-4.1.4/avalon-framework-4.1.4.jar"/>
++  <property name="avalon-framework-api.jar"    value="../../Avalon-4.3/avalon-framework-api-4.3.jar"/>
++  <property name="avalon-framework-impl.jar"    value="../../Avalon-4.3/avalon-framework-impl-4.3.jar"/>
+ 
+ 
+ <!-- ========== Component Declarations ==================================== -->
+@@ -100,7 +101,8 @@
+     <pathelement location="${junit.jar}"/>
+     <pathelement location="${log4j.jar}"/>
+     <pathelement location="${logkit.jar}"/>
+-    <pathelement location="${avalon-framework.jar}"/>
++    <pathelement location="${avalon-framework-api.jar}"/>
++    <pathelement location="${avalon-framework-impl.jar}"/>
+   </path>
+ 
+ 
+@@ -114,7 +116,8 @@
+     <pathelement location="${junit.jar}"/>
+     <pathelement location="${log4j.jar}"/>
+     <pathelement location="${logkit.jar}"/>
+-    <pathelement location="${avalon-framework.jar}"/>
++    <pathelement location="${avalon-framework-api.jar}"/>
++    <pathelement location="${avalon-framework-impl.jar}"/>
+     <pathelement location="${conf.home}"/>
+   </path>
+ 
+@@ -171,7 +174,8 @@
+     <echo>
+     Log4j: ${log4j.jar}
+     LogKit: ${logkit.jar}
+-    Avalon-Framework: ${avalon-framework.jar}
++    Avalon-Framework API: ${avalon-framework-api.jar}
++    Avalon-Framework Impl: ${avalon-framework-impl.jar}
+     </echo>
+ 
+     <mkdir dir="${build.home}"/>
+@@ -226,7 +230,7 @@
+   <target name="avalon-framework-warning" unless='avalon-framework.present' depends='init,discovery'>
+     <echo>
+     *** WARNING ***
+-    Avalon-Framework not found: Cannot Build AvalonLogger
++    Avalon-Framework Impl not found: Cannot Build AvalonLogger
+     </echo>
+   </target>
+   
